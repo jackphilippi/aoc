@@ -9,12 +9,9 @@ pub fn main() {
   let input = "./src/input.txt"
   let assert Ok(input) = simplifile.read(input)
 
-  // split the input into lines
-  let lines = string.split(input, "\n")
-
   // for each line, get a list of integers
   let cols =
-    lines
+    string.split(input, "\n")
     |> list.map(split_columns)
     |> list.transpose
     |> list.map(fn(l) { list.sort(l, by: int.compare) })
